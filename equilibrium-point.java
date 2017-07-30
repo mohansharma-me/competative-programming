@@ -82,25 +82,6 @@ public class Main {
 }
 
 class Brain {
-
-    long solve(ArrayList<Long> numbers, int index, long first, long last, long sum) {
-        if(index >= numbers.size()) return sum; 
-        long sum1 = (sum+solve(numbers, index+1, numbers.get(index), last, (numbers.get(index)*first) % 1000000007)) % 1000000007;
-        long sum2 = (sum+solve(numbers, index+1, first, numbers.get(index), (numbers.get(index)*last) % 1000000007)) % 1000000007;
-        return (sum1+sum2) % 1000000007;
-    }
-
-    // s([21], 4, 3) 
-    //     4*2=8
-    //     s([1], 2, 3)
-    //         s([], 1, 3)
-    //         s([], 2, 1)
-    //     3*2=6
-    //     s([1], 4, 2)
-    //         s([], 1, 2)
-    //         s([], 4, 1)
-            
-
     // Graph variables
     // HashMap<Integer, Node> nodes = new HashMap<>();
     // HashMap<Integer, HashMap<Integer, Edge>> edges = new HashMap<>(); // -- Edge object
